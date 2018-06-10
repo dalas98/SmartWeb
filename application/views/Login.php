@@ -47,7 +47,7 @@ data-open="hover" data-menu="horizontal-menu" data-col="1-column">
                 <div class="card-header border-0">
                   <div class="card-title text-center">
                     <div class="p-1">
-                      <img src="<?php echo base_url('assets/images/logo/stack-logo-dark.png') ?>" alt="branding logo">
+                      <a href="<?=site_url()?>"><img src="<?php echo base_url('assets/images/logo/stack-logo-dark.png') ?>" alt="branding logo"></a>
                     </div>
                   </div>
                 </div>
