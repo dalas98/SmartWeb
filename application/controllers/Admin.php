@@ -21,6 +21,14 @@ class Admin extends CI_Controller {
 
 	public function test()
 	{
+		// request list of contacts from Web API
+		$url=base_url("meetix-api-all.php");
+
 		
+		$json = file_get_contents($url);
+		$jsonToArray = json_decode($json);
+		echo "<pre>";
+		print_r($jsonToArray);
+		echo "</pre>";
 	}
 }

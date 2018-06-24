@@ -37,13 +37,18 @@
                                     <div class="card-content">
                                         <div class="card-body">
                                             <h4 class="card-title">New Event</h4>
-                                            <?php foreach($event as $data) { ?>
+                                            <?php foreach($api as $data) { ?>
                                                 <ul class="list-group">
-                                                    <a href="<?=site_url('Showcontent/show/'.$data['id_Event'])?>">
-                                                        <li class="list-group-item"><?php echo $data['nama_event']; ?></li>
+                                                    <a href="<?=site_url('Showcontent/show/'.$data->id_Event)?>">
+                                                        <li class="list-group-item"><?=$data->nama_event?></li>
                                                     </a>
                                                 </ul>
                                             <?php } ?>
+                                            <!-- <ul>
+                                            <?php foreach ($api as $data ): ?>
+                                                <li><?=$data->nama_event?></li>
+                                            <?php endforeach ?>
+                                            </ul> -->
                                         </div>
                                     </div>
                                 </div>
@@ -61,16 +66,16 @@
                             </div>
                         </div>
                         <div class="row match-height">
-                            <?php foreach($event as $data) { ?>
+                            <?php foreach($api as $data) { ?>
                                 <div class="col-xl-3 col-md-6 col-sm-12">
                                     <div class="card">
                                         <div class="card-content">
-                                            <a href="<?=site_url('Showcontent/show/'.$data['id_Event'])?>" class="text-dark">
-                                                <img class="card-img-top img-fluid" src="<?php echo $data['image_event']; ?>" alt="Gambar Event">
+                                            <a href="<?=site_url('Showcontent/show/'.$data->id_Event)?>" class="text-dark">
+                                                <img class="card-img-top img-fluid" src="<?php echo $data->gambar_event ?>" alt="Gambar Event">
                                                 <div class="card-body">
-                                                    <h4 class="card-title"><?php echo $data['nama_event']; ?></h4>
-                                                    <p class="card-text"><span class="ft-calendar"></span> <?php echo date('D, d M Y H:i', strtotime($data['jadwal_event'])); ?></p>
-                                                    <p class="card-text"><span class="ft-map-pin"></span> <?php echo $data['lokasi_event']; ?></p>
+                                                    <h4 class="card-title"><?php echo $data->nama_event ?></h4>
+                                                    <p class="card-text"><span class="ft-calendar"></span> <?php echo date('D, d M Y H:i', strtotime($data->jadwal_event)); ?></p>
+                                                    <p class="card-text"><span class="ft-map-pin"></span> <?php echo $data->lokasi_event ?></p>
                                                 </div>
                                             </a>
                                         </div>

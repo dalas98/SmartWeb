@@ -2,8 +2,8 @@
 header("Content-type:application/json"); 
  
 $koneksi = mysqli_connect("localhost", "root", "","meetix");
- 
-$query = "SELECT * from event";
+$id_Event = $_GET['id_Event'];
+$query = "SELECT * from event where id_Event = '$id_Event'";
 $result = mysqli_query($koneksi,$query);
  
 $arr = array();
@@ -17,10 +17,10 @@ while ($row = mysqli_fetch_assoc($result)) {
     	"harga_tiket" => $row["harga_tiket"],
     	"metode_pembayaran" => $row["metode_pembayaran"]);
    
-    array_push($arr, $temp);
+     array_push($arr, $temp);
 }
  
 $data = json_encode($arr);
  
-echo "{\"data\":" . $data . "}";
+echo "{\"Event\":" . $data . "}";
 ?>

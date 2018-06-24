@@ -1,12 +1,12 @@
 <?php 
-if ($show->harga_tiket == 0) {
-	$show->metode_pembayaran = '-';
+if ($api->harga_tiket == 0) {
+	$api->metode_pembayaran = '-';
 }?>
 <div class="app-content content">
 	<div class="content-wrapper">
 		<div class="content-header row">
 			<div class="content-header-left col-md-6 col-12 mb-2">
-				<h3 class="content-header-title mb-0"><?php echo $show->nama_event?></h3>
+				<h3 class="content-header-title mb-0"><?php echo $api->nama_event?></h3>
 			</div>
 		</div>
 		<div class="content-body">
@@ -19,7 +19,7 @@ if ($show->harga_tiket == 0) {
 								<div class="card-content">
 									<div class="card-body">
 										<!-- Card sample -->
-										<img class="img-thumbnail img-fluid" src="<?php echo $show->image_event?>" alt="Event Image" >
+										<img class="img-thumbnail img-fluid" src="<?php echo $api->gambar_event?>" alt="Event Image" >
 										<!-- /Card sample -->
 									</div>
 								</div>
@@ -35,19 +35,19 @@ if ($show->harga_tiket == 0) {
 											<tbody>
 												<tr>
 													<td>Date Performance</td>
-													<td><?php echo date('d M Y', strtotime($show->jadwal_event)); ?></td>
+													<td><?php echo date('d M Y', strtotime($api->jadwal_event)); ?></td>
 												</tr>
 												<tr>
 													<td>Venue</td>
-													<td><?php echo $show->lokasi_event?></td>
+													<td><?php echo $api->lokasi_event?></td>
 												</tr>
 												<tr>
 													<td>Price</td>
-													<td>IDR. <?php echo number_format($show->harga_tiket, 0, ".", ".")?></td>
+													<td>IDR. <?php echo number_format($api->harga_tiket, 0, ".", ".")?></td>
 												</tr>
 												<tr>
 													<td>Payment Method</td>
-													<td><?php echo $show->metode_pembayaran?></td>
+													<td><?php echo $api->metode_pembayaran?></td>
 												</tr>
 											</tbody>
 										</table>
