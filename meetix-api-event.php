@@ -15,7 +15,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     	"lokasi_event" => $row["lokasi_event"],
     	"gambar_event" => $row["image_event"],
     	"harga_tiket" => $row["harga_tiket"],
-    	"metode_pembayaran" => $row["metode_pembayaran"]);
+    	"kategori_event" => $row["kategori_event"]);
    
      array_push($arr, $temp);
 }

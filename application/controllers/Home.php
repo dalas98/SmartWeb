@@ -15,12 +15,13 @@ class Home extends CI_Controller {
 	{
 		$url=base_url("meetix-api-all.php");
 
-		
+		$id_user = $this->session->userdata('id_user');
+		$balance['tampil'] = $this->Home_model->see_balance($id_user);
 		$json = file_get_contents($url);
 		$jsonToArray = json_decode($json);
 		$data['api'] = $jsonToArray->data;
 		// $data['duit'] = $this->Home_model->balance();
-		$this->load->view('home/header');
+		$this->load->view('home/header',$balance);
 		$this->load->view('home/index',$data);
 		$this->load->view('home/footer');
 	}

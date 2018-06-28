@@ -10,13 +10,13 @@
                                 <div id="carousel-interval" class="carousel slide" data-ride="carousel" data-interval="15000">
                                     <div class="carousel-inner" role="listbox">
                                         <div class="carousel-item active">
-                                            <img src="<?=base_url('assets/images/carousel/cover2.jpg')?>" class="col-12">
+                                            <img src="<?=$api[0]->gambar_event?>" class="col-12">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="<?=base_url('assets/images/carousel/cover2.jpg')?>" class="col-12">
+                                            <img src="<?=$api[1]->gambar_event?>" class="col-12">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="<?=base_url('assets/images/carousel/cover2.jpg')?>" class="col-12">
+                                            <img src="<?=$api[2]->gambar_event?>" class="col-12">
                                         </div>
                                     </div>
                                     <a class="carousel-control-prev" href="#carousel-interval" role="button" data-slide="prev">

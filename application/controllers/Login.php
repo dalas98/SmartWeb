@@ -32,9 +32,10 @@ class Login extends CI_Controller {
         if($cek > 0){
             $result = $this->db->get_where('users',$where)->row_array();
             $datasession = array(
+                'id_user' => $result['id_user'],
                 'username' => $result['username'],
                 'role'=> $result['role'],
-                'balance' => $result['balance'],
+                'password' => $result['password'],
                 'nama' => $result['nama']);
             $this->session->set_userdata($datasession);
             if ($result['role']=='admin') {

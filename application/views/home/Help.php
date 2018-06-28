@@ -5,7 +5,7 @@
             <section>
                 <div class="container">
                     <div class="row">
-                        FAQ 
+                        FAQ
                     </div>
                 </div>
             </section>

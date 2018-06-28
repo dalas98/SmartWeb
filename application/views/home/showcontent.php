@@ -1,7 +1,3 @@
-<?php 
-if ($api->harga_tiket == 0) {
-	$api->metode_pembayaran = '-';
-}?>
 <div class="app-content content">
 	<div class="content-wrapper">
 		<div class="content-header row">
@@ -42,12 +38,18 @@ if ($api->harga_tiket == 0) {
 													<td><?php echo $api->lokasi_event?></td>
 												</tr>
 												<tr>
-													<td>Price</td>
-													<td>IDR. <?php echo number_format($api->harga_tiket, 0, ".", ".")?></td>
+													<td>Category</td>
+													<td>
+														<select name="">
+															<option value="">VIP</option>
+															<option value="">Reguler</option>
+														</select>
+													</td>
+													<!-- <td><?php echo $api->kategori_event?></td> -->
 												</tr>
 												<tr>
-													<td>Payment Method</td>
-													<td><?php echo $api->metode_pembayaran?></td>
+													<td>Price</td>
+													<td>IDR. <?php echo number_format($api->harga_tiket, 0, ".", ".")?></td>
 												</tr>
 											</tbody>
 										</table>
@@ -58,7 +60,7 @@ if ($api->harga_tiket == 0) {
 						</div>
 						<div class="col text-right">
 							<?php if ($this->session->userdata('nama')): ?>
-								<a href="#" class="btn btn-lg btn-success">Add To Cart</a>
+								<a href="<?=site_url('Users/detail/'.$api->id_Event)?>" class="btn btn-lg btn-success">Buy Ticket</a>
 								<?php else: ?>
 									<a href="<?=site_url('Login')?>" class="btn btn-lg btn-success">Login to Get Ticket</a>
 								<?php endif ?>

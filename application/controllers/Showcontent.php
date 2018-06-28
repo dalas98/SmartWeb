@@ -15,8 +15,9 @@ class Showcontent extends CI_Controller {
 		$json = file_get_contents($url);
 		$jsonToArray = json_decode($json);
 		$data['api'] = $jsonToArray->Event[0];
-
-		$this->load->view('home/header');
+		$id_user = $this->session->userdata('id_user');
+		$balance['tampil'] = $this->Home_model->see_balance($id_user);
+		$this->load->view('home/header',$balance);
 		$this->load->view('home/showcontent',$data);
 		$this->load->view('home/footer');
 	}

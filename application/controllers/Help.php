@@ -5,7 +5,10 @@ class Help extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home/header');
+		$id_user = $this->session->userdata('id_user');
+		$balance['tampil'] = $this->Home_model->see_balance($id_user);
+
+		$this->load->view('home/header',$balance);
 		$this->load->view('home/Help');
 		$this->load->view('home/footer');
 	}

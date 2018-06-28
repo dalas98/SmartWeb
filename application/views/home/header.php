@@ -83,7 +83,8 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <ul class="dropdown-header">
-                                        <p>Balance : <strong>IDR. <?php echo number_format($this->session->userdata('balance'), 0, ".", ".")?></strong></p>
+                                        <p>Balance : <strong>IDR. <?php echo number_format($tampil[0]['balance'], 0, ".", ".")?></strong></p>
+                                        <!-- <p><?php echo $tampil[0]['balance']; ?></p> -->
                                     </ul>
                                     <!-- <a class="dropdown-item" href="#">
                                         <i class="ft-mail"></i> My Inbox</a>
