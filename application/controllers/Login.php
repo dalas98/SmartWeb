@@ -34,6 +34,7 @@ class Login extends CI_Controller {
             $datasession = array(
                 'username' => $result['username'],
                 'role'=> $result['role'],
+                'balance' => $result['balance'],
                 'nama' => $result['nama']);
             $this->session->set_userdata($datasession);
             if ($result['role']=='admin') {

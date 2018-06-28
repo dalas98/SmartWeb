@@ -11,4 +11,8 @@ class Home_model extends CI_Model{
 		$query = $this->db->get('event');
 		return $query->result_array();
 	}
+	function balance(){
+		$query = $this->db->get('users');
+		return $query->result_array();
+	}
 }

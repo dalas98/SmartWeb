@@ -82,12 +82,13 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="ft-user"></i> Edit Profile</a>
-                                    <a class="dropdown-item" href="#">
+                                    <ul class="dropdown-header">
+                                        <p>Balance : <strong>IDR. <?php echo number_format($this->session->userdata('balance'), 0, ".", ".")?></strong></p>
+                                    </ul>
+                                    <!-- <a class="dropdown-item" href="#">
                                         <i class="ft-mail"></i> My Inbox</a>
                                     <a class="dropdown-item" href="#">
-                                        <i class="ft-check-square"></i> Task</a>
+                                        <i class="ft-check-square"></i> Task</a> -->
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="<?= site_url('login?logout=signout')?>">
                                         <i class="ft-power"></i> Logout</a>

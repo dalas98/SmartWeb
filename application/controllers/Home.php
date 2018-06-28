@@ -19,7 +19,7 @@ class Home extends CI_Controller {
 		$json = file_get_contents($url);
 		$jsonToArray = json_decode($json);
 		$data['api'] = $jsonToArray->data;
-		// $data['event'] = $this->Home_model->newevent();
+		// $data['duit'] = $this->Home_model->balance();
 		$this->load->view('home/header');
 		$this->load->view('home/index',$data);
 		$this->load->view('home/footer');

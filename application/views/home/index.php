@@ -6,7 +6,7 @@
                     <div class="container">
                         <div class="row">
                             <!-- Carousel -->
-                            <div class="col-md-9 col-12">
+                            <div class="col-md-12 col-12">
                                 <div id="carousel-interval" class="carousel slide" data-ride="carousel" data-interval="15000">
                                     <div class="carousel-inner" role="listbox">
                                         <div class="carousel-item active">
@@ -31,29 +31,6 @@
                                 <br>
                             </div>
                             <!-- End Of Carousel -->
-                            <!-- Category -->
-                            <div class="col-md-3 col-12">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <h4 class="card-title">New Event</h4>
-                                            <?php foreach($api as $data) { ?>
-                                                <ul class="list-group">
-                                                    <a href="<?=site_url('Showcontent/show/'.$data->id_Event)?>">
-                                                        <li class="list-group-item"><?=$data->nama_event?></li>
-                                                    </a>
-                                                </ul>
-                                            <?php } ?>
-                                            <!-- <ul>
-                                            <?php foreach ($api as $data ): ?>
-                                                <li><?=$data->nama_event?></li>
-                                            <?php endforeach ?>
-                                            </ul> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Of Category -->
                         </div>
                     </div>
                 </section>
