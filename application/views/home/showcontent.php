@@ -69,7 +69,7 @@
 					</div>
 				</section>
 				<br>
-				<section id="gmaps">
+				<!-- <section id="gmaps">
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-12">
@@ -86,7 +86,7 @@
 							</div>
 						</div>
 					</div>
-				</section>
+				</section> -->
 			</div>
 		</div>
 	</div>

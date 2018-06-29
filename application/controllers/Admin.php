@@ -13,9 +13,10 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
+		$data['show'] = $this->Admin_model->See_acc();
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/content');
+		$this->load->view('admin/content',$data);
 		$this->load->view('admin/footer');
 	}
 

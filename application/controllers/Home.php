@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$url=base_url("meetix-api-all.php");
+		$url=base_url("meetix-api-home.php");
 
 		$id_user = $this->session->userdata('id_user');
 		$balance['tampil'] = $this->Home_model->see_balance($id_user);
