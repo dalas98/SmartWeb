@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2018 at 12:43 AM
+-- Generation Time: Jun 29, 2018 at 11:40 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -58,7 +58,13 @@ CREATE TABLE `event` (
 INSERT INTO `event` (`id_Event`, `nama_event`, `jadwal_event`, `lokasi_event`, `image_event`, `harga_tiket`, `kategori_event`) VALUES
 ('E0001', 'Gelar Jepang UI', '2018-08-26 10:00:00', 'Gedung FIB Universitas Indonesia Depok', 'http://localhost/SmartWeb/assets/images/upload/gjui.jpg', 25000, 'VIP'),
 ('E0002', 'Paramore in Jakarta', '2018-08-25 18:00:00', 'ICE BSD City, Jl. BSD Grand Boulevard, BSD City, Kota Tangerang', 'http://localhost/SmartWeb/assets/images/upload/paramore.jpg', 1000000, 'Reguler'),
-('E0003', 'Ennichisai 2018', '2018-06-30 10:00:00', 'Plaza Blok M, JL. Sultan Hasanudin,Kebayoran Baru, Melawai, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta', 'http://localhost/SmartWeb/assets/images/upload/ennichisai.jpg', 0, 'Reguler');
+('E0003', 'Ennichisai 2018', '2018-06-30 10:00:00', 'Plaza Blok M, JL. Sultan Hasanudin,Kebayoran Baru, Melawai, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta', 'http://localhost/SmartWeb/assets/images/upload/ennichisai.jpg', 15000, 'Reguler'),
+('E0004', 'Seminar Entreprenur', '2018-09-04 08:00:00', 'Grand Tebu Hotel, Bandung', 'http://localhost/SmartWeb/assets/images/upload/seminar.jpg', 300000, 'Reguler'),
+('E0005', 'Starlight with KAHITNA', '2018-07-15 19:00:00', 'Premier Basko Hotel Padang', 'http://localhost/SmartWeb/assets/images/upload/starlight.jpg', 300000, 'VIP'),
+('E0006', 'Jazz Gunung Bromo 2018', '2018-07-27 16:00:00', 'Amfiteater Terbuka Jiwa Jawa Resort, Sukapura, Probolinggo, Jawa Timur', 'http://localhost/SmartWeb/assets/images/upload/jazz.jpg', 500000, 'VIP'),
+('E0007', 'Boyzone 25 Years Farewell Concert', '2018-08-18 15:00:00', 'Trans Luxury Hotel, Bandung', 'http://localhost/SmartWeb/assets/images/upload/boyzone.jpg', 600000, 'VIP'),
+('E0008', 'Saturdate : Sheila On 7 In Concert ', '2018-07-20 17:00:00', 'Waterbom Jakarta, Pantai Indah Kapuk, Jakarta', 'http://localhost/SmartWeb/assets/images/upload/so7.jpg', 200000, 'VIP'),
+('E0009', 'Glenn Fredly on Concert', '2018-07-13 15:00:00', 'Grand Pacific Hall Yogyakarta', 'http://localhost/SmartWeb/assets/images/upload/glen.jpg', 250000, 'Reguler');
 
 -- --------------------------------------------------------
 
@@ -97,6 +103,26 @@ CREATE TABLE `transaksi` (
   `harga_tiket` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_transaksi`, `id_Event`, `id_user`, `tanggal_beli`, `harga_tiket`) VALUES
+('TRANS0001', 'E0002', 'U0001', '2018-06-28 22:44:37', 1000000),
+('TRANS0002', 'E0001', 'U0001', '2018-06-28 22:46:29', 25000),
+('TRANS0003', 'E0001', 'U0001', '2018-06-29 01:13:53', 25000),
+('TRANS0004', 'E0002', 'U0001', '2018-06-29 01:19:10', 1000000),
+('TRANS0005', 'E0008', 'U0003', '2018-06-29 04:19:53', 200000),
+('TRANS0006', 'E0001', 'U0001', '2018-06-29 04:27:38', 25000),
+('TRANS0007', 'E0001', 'U0001', '2018-06-29 06:09:07', 25000),
+('TRANS0008', 'E0002', 'U0001', '2018-06-29 06:30:52', 1000000),
+('TRANS0009', 'E0008', 'U0001', '2018-06-29 06:36:12', 200000),
+('TRANS0010', 'E0001', 'U0001', '2018-06-29 06:39:09', 25000),
+('TRANS0011', 'E0007', 'U0001', '2018-06-29 07:01:35', 600000),
+('TRANS0012', 'E0001', 'U0001', '2018-06-29 07:02:11', 25000),
+('TRANS0013', 'E0001', 'U0001', '2018-06-29 07:15:56', 25000),
+('TRANS0014', 'E0001', 'U0001', '2018-06-29 08:43:48', 25000);
+
 -- --------------------------------------------------------
 
 --
@@ -118,7 +144,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `nama`, `username`, `password`, `balance`, `role`) VALUES
 ('AD001', 'Yusuf Farhan', 'dalas98', 'd1bbb2af69fd350b6d6bd88655757b47', 1000000, 'admin'),
-('U0001', 'Saiful Hadi', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 3950000, 'member');
+('U0001', 'Saiful Hadi', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 950000, 'member'),
+('U0002', 'widya lestari', 'widya ', '81dc9bdb52d04dc20036dbd8313ed055', 0, 'member'),
+('U0003', 'devia ardyani', 'dev', '202cb962ac59075b964b07152d234b70', 300000, 'member');
 
 --
 -- Indexes for dumped tables
