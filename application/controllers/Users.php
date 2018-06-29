@@ -3,13 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Users extends CI_Controller {
 	function __construct(){
-        parent::__construct();
-        if (!$this->session->has_userdata('username')) {
+		parent::__construct();
+		if (!$this->session->has_userdata('username')) {
 			redirect('Login');
-		}else if($this->session->userdata('role') =='admin'){
-			redirect('Admin');
-		}  
-        }
+		}
+	}
 
 	public function index()
 	{
@@ -45,11 +43,16 @@ class Users extends CI_Controller {
 		$harga = $data;
 		$balanceup = $balance['tampil'][0]['balance'];
 		$minbalance = $balanceup-$harga;
+		if ($minbalance < 0) {
+			$this->session->set_flashdata('kurang', 'true');
+			redirect('Users/detail/'.$id_Event);
+		}else{
 		$update = $this->Home_model->updatebalance($id_user, $minbalance);
 
 		$data = array('id_transaksi' => $id_transaksi, 'id_Event' => $id_Event, 'id_user' => $id_user , 'tanggal_beli' => NULL, 'harga_tiket' => $harga);
 		$add = $this->Home_model->confirm_tiket('transaksi',$data);
 		redirect('Users/ticket/'.$id_transaksi);
+		}
 	}
 	public function ticket($id_transaksi)
 	{
@@ -61,15 +64,15 @@ class Users extends CI_Controller {
 		$this->load->view('home/footer');
 	}
 	public function loginpay($id_Event)
-    {
-        $password = md5($this->input->post('password'));
-        $passtrue = $this->session->userdata('password');
-        if ($password == $passtrue) {
-        	redirect('Users/confirmbuy/'.$id_Event);
-        }else{
-        	$this->session->set_flashdata('info', 'true');
-        	redirect('Users/detail/'.$id_Event);
-        }
+	{
+		$password = md5($this->input->post('password'));
+		$passtrue = $this->session->userdata('password');
+		if ($password == $passtrue) {
+			redirect('Users/confirmbuy/'.$id_Event);
+		}else{
+			$this->session->set_flashdata('info', 'true');
+			redirect('Users/detail/'.$id_Event);
+		}
 
-    }
+	}
 }

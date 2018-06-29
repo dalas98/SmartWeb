@@ -14,12 +14,50 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$data['show'] = $this->Admin_model->See_acc();
+		$event['see'] = $this->Admin_model->See_event();
 		$this->load->view('admin/header');
-		$this->load->view('admin/sidebar');
+		$this->load->view('admin/sidebar',$event);
 		$this->load->view('admin/content',$data);
 		$this->load->view('admin/footer');
 	}
+	public function listacc()
+	{
+		$data['show'] = $this->Admin_model->count();
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/table_acc',$data);
+		$this->load->view('admin/footer');
+	}
 
+	public function insertbalance()
+	{
+		$id_user = $this->input->post('id_user');
+		$new = $this->input->post('balanceupdate');
+		$before = $this->input->post('balancebefore');
+
+		$newbalance = $new+$before;
+		$update = $this->Admin_model->updatebalance($id_user, $newbalance);
+		redirect('Admin/listacc');
+
+	}
+	public function reducebalance()
+	{
+		$id_user = $this->input->post('id_user');
+		$new = $this->input->post('balanceupdate');
+		$before = $this->input->post('balancebefore');
+
+		$newbalance = $before-$new;
+		$update = $this->Admin_model->updatebalance($id_user, $newbalance);
+		redirect('Admin/listacc');
+	}
+	public function event()
+	{
+		$event['see'] = $this->Admin_model->See_all_event();
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/add_event',$event);
+		$this->load->view('admin/footer');
+	}
 	public function test()
 	{
 		// request list of contacts from Web API
@@ -34,11 +72,9 @@ class Admin extends CI_Controller {
 		print_r($data);
 		echo "</pre>";
 	}
-	public function test2()
+	public function test2($id_user)
 	{
-		$id_user = $this->session->userdata('id_user');
-		$balance['tampil'] = $this->Home_model->see_balance('users',$id_user);
-
-		echo $balance['tampil'][0]['balance'];
+		$balance[] = $this->Home_model->see_balance($id_user);
+		print_r($balance[0][0]['balance']);
 	}
 }
