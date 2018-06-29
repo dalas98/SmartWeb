@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2018 at 11:40 AM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+-- Generation Time: Jun 29, 2018 at 09:29 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -58,7 +58,7 @@ CREATE TABLE `event` (
 INSERT INTO `event` (`id_Event`, `nama_event`, `jadwal_event`, `lokasi_event`, `image_event`, `harga_tiket`, `kategori_event`) VALUES
 ('E0001', 'Gelar Jepang UI', '2018-08-26 10:00:00', 'Gedung FIB Universitas Indonesia Depok', 'http://localhost/SmartWeb/assets/images/upload/gjui.jpg', 25000, 'VIP'),
 ('E0002', 'Paramore in Jakarta', '2018-08-25 18:00:00', 'ICE BSD City, Jl. BSD Grand Boulevard, BSD City, Kota Tangerang', 'http://localhost/SmartWeb/assets/images/upload/paramore.jpg', 1000000, 'Reguler'),
-('E0003', 'Ennichisai 2018', '2018-06-30 10:00:00', 'Plaza Blok M, JL. Sultan Hasanudin,Kebayoran Baru, Melawai, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta', 'http://localhost/SmartWeb/assets/images/upload/ennichisai.jpg', 15000, 'Reguler'),
+('E0003', 'Ennichisai 2018', '2018-06-30 10:00:00', 'Plaza Blok M, JL. Sultan Hasanudin,Kebayoran Baru, Melawai, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta', 'http://localhost/SmartWeb/assets/images/upload/ennichisai.jpg', 0, 'Reguler'),
 ('E0004', 'Seminar Entreprenur', '2018-09-04 08:00:00', 'Grand Tebu Hotel, Bandung', 'http://localhost/SmartWeb/assets/images/upload/seminar.jpg', 300000, 'Reguler'),
 ('E0005', 'Starlight with KAHITNA', '2018-07-15 19:00:00', 'Premier Basko Hotel Padang', 'http://localhost/SmartWeb/assets/images/upload/starlight.jpg', 300000, 'VIP'),
 ('E0006', 'Jazz Gunung Bromo 2018', '2018-07-27 16:00:00', 'Amfiteater Terbuka Jiwa Jawa Resort, Sukapura, Probolinggo, Jawa Timur', 'http://localhost/SmartWeb/assets/images/upload/jazz.jpg', 500000, 'VIP'),
@@ -121,7 +121,16 @@ INSERT INTO `transaksi` (`id_transaksi`, `id_Event`, `id_user`, `tanggal_beli`, 
 ('TRANS0011', 'E0007', 'U0001', '2018-06-29 07:01:35', 600000),
 ('TRANS0012', 'E0001', 'U0001', '2018-06-29 07:02:11', 25000),
 ('TRANS0013', 'E0001', 'U0001', '2018-06-29 07:15:56', 25000),
-('TRANS0014', 'E0001', 'U0001', '2018-06-29 08:43:48', 25000);
+('TRANS0014', 'E0001', 'U0001', '2018-06-29 08:43:48', 25000),
+('TRANS0015', 'E0005', 'U0001', '2018-06-29 15:07:25', 300000),
+('TRANS0016', 'E0002', 'AD001', '2018-06-29 16:50:00', 1000000),
+('TRANS0017', 'E0002', 'AD001', '2018-06-29 19:14:38', 1000000),
+('TRANS0018', 'E0001', 'AD001', '2018-06-29 19:17:05', 25000),
+('TRANS0019', 'E0001', 'AD001', '2018-06-29 19:18:22', 25000),
+('TRANS0020', 'E0001', 'AD001', '2018-06-29 19:19:32', 25000),
+('TRANS0021', 'E0001', 'AD001', '2018-06-29 19:24:00', 25000),
+('TRANS0022', 'E0001', 'AD001', '2018-06-29 19:24:33', 25000),
+('TRANS0023', 'E0003', 'AD001', '2018-06-29 19:25:32', 0);
 
 -- --------------------------------------------------------
 
@@ -143,10 +152,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `nama`, `username`, `password`, `balance`, `role`) VALUES
-('AD001', 'Yusuf Farhan', 'dalas98', 'd1bbb2af69fd350b6d6bd88655757b47', 1000000, 'admin'),
-('U0001', 'Saiful Hadi', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 950000, 'member'),
-('U0002', 'widya lestari', 'widya ', '81dc9bdb52d04dc20036dbd8313ed055', 0, 'member'),
-('U0003', 'devia ardyani', 'dev', '202cb962ac59075b964b07152d234b70', 300000, 'member');
+('AD001', 'Yusuf Farhan', 'dalas98', 'd1bbb2af69fd350b6d6bd88655757b47', 0, 'admin'),
+('U0001', 'Saiful Hadi', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 1650000, 'member'),
+('U0002', 'widya lestari', 'widya ', '81dc9bdb52d04dc20036dbd8313ed055', 1000000, 'member'),
+('U0003', 'devia ardyani', 'dev', '202cb962ac59075b964b07152d234b70', 300000, 'member'),
+('U0004', 'balance ', 'balance', '0079fcb602361af76c4fd616d60f9414', 50000000, 'member');
 
 --
 -- Indexes for dumped tables
