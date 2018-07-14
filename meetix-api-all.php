@@ -3,7 +3,7 @@ header("Content-type:application/json");
  
 $koneksi = mysqli_connect("localhost", "root", "","meetix");
  
-$query = "SELECT * from event";
+$query = "SELECT * from event  ORDER BY jadwal_event DESC";
 $result = mysqli_query($koneksi,$query);
  
 $arr = array();
@@ -16,9 +16,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     	"gambar_event" => $row["image_event"],
     	"harga_tiket" => $row["harga_tiket"],
     	"kategori_event" => $row["kategori_event"]);
-   
-     array_push($arr, $temp);
-}
+     array_push($arr, $temp);}
  
 $data = json_encode($arr);
  

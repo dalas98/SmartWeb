@@ -35,4 +35,24 @@ class Admin_model extends CI_Model{
         	$total = $query->result_array();
         	return $total;
 	}
+	public function IDEvent()
+	{
+        $this->db->select("RIGHT(id_Event,2) AS kode ");
+        $this->db->order_by('id_Event', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('event');
+        if($query->num_rows()>0){
+            $data = $query->row();
+            $kode = intval($data->kode)+1;
+        }else{
+            $kode = 1;
+        }
+        $kodemax = str_pad($kode,4,"0",STR_PAD_LEFT);
+        $kodejadi  = "E".$kodemax;
+        return $kodejadi;
+   	}
+   	public function createvent($table,$data){
+		$create = $this->db->insert($table,$data);
+		return $create;
+	}
 }

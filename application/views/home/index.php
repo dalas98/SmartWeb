@@ -10,13 +10,13 @@
                                 <div id="carousel-interval" class="carousel slide" data-ride="carousel" data-interval="15000">
                                     <div class="carousel-inner" role="listbox">
                                         <div class="carousel-item active">
-                                            <img src="<?=$api[0]->gambar_event?>" class="col-12">
+                                            <img src="<?=base_url('assets/images/upload/'.$api[0]->gambar_event)?>" class="col-12">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="<?=$api[1]->gambar_event?>" class="col-12">
+                                            <img src="<?=base_url('assets/images/upload/'.$api[1]->gambar_event)?>" class="col-12">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="<?=$api[2]->gambar_event?>" class="col-12">
+                                            <img src="<?=base_url('assets/images/upload/'.$api[2]->gambar_event)?>" class="col-12">
                                         </div>
                                     </div>
                                     <a class="carousel-control-prev" href="#carousel-interval" role="button" data-slide="prev">
@@ -48,7 +48,7 @@
                                     <div class="card">
                                         <div class="card-content">
                                             <a href="<?=site_url('Showcontent/show/'.$data->id_Event)?>" class="text-dark">
-                                                <img class="card-img-top img-fluid" src="<?php echo $data->gambar_event ?>" alt="Gambar Event">
+                                                <img class="card-img-top img-fluid" src="<?php echo base_url('assets/images/upload/'.$data->gambar_event) ?>" alt="Gambar Event">
                                                 <div class="card-body">
                                                     <h4 class="card-title"><?php echo $data->nama_event ?></h4>
                                                     <p class="card-text"><span class="ft-calendar"></span> <?php echo date('D, d M Y H:i', strtotime($data->jadwal_event)); ?></p>

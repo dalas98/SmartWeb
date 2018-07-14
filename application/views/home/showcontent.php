@@ -15,7 +15,7 @@
 								<div class="card-content">
 									<div class="card-body">
 										<!-- Card sample -->
-										<img class="img-thumbnail img-fluid" src="<?php echo $api->gambar_event?>" alt="Event Image" >
+										<img class="img-thumbnail img-fluid" src="<?php echo base_url('assets/images/upload/'.$api->gambar_event)?>" alt="Event Image" >
 										<!-- /Card sample -->
 									</div>
 								</div>
@@ -39,13 +39,13 @@
 												</tr>
 												<tr>
 													<td>Category</td>
-													<td>
+													<!-- <td>
 														<select name="">
 															<option value="">VIP</option>
 															<option value="">Reguler</option>
 														</select>
-													</td>
-													<!-- <td><?php echo $api->kategori_event?></td> -->
+													</td> -->
+													<td><?php echo $api->kategori_event?></td>
 												</tr>
 												<tr>
 													<td>Price</td>

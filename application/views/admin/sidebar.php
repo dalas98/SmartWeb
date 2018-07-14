@@ -5,7 +5,7 @@
             </li>
             <li class="nav-item <?php if($this->uri->segment(2)=="listacc"){echo 'active';}?>"><a href="<?=site_url('Admin/listacc') ?>"><i class="ft-user"></i><span class="menu-title" data-i18n="">Setting User</span></a>
             </li>
-             <li class="nav-item <?php if($this->uri->segment(2)=="event"){echo 'active';}?>"><a href="<?=site_url('Admin/event') ?>"><i class="ft-calendar"></i><span class="menu-title" data-i18n="">Event</span></a>
+             <li class="nav-item <?php if($this->uri->segment(2)=="event"){echo 'active';}?>"><a href="<?=site_url('Admin/event') ?>"><i class="ft-calendar"></i><span class="menu-title" data-i18n="   ">Event</span></a>
             </li>
         </ul>
     </div>

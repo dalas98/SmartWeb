@@ -3,7 +3,7 @@ header("Content-type:application/json");
  
 $koneksi = mysqli_connect("localhost", "root", "","meetix");
  
-$query = "SELECT * from event limit 8";
+$query = "SELECT * from event  ORDER BY jadwal_event DESC limit 8";
 $result = mysqli_query($koneksi,$query);
  
 $arr = array();

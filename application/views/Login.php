@@ -109,7 +109,7 @@
     <!-- BEGIN STACK JS-->
     <script src="<?php echo base_url('assets/js/core/app-menu.js') ?>" type="text/javascript"></script>
     <script src="<?php echo base_url('assets/js/core/app.js') ?>" type="text/javascript"></script>
-    <script src="<?php echo base_url('assets/js/scripts/customizer.js') ?>" type="text/javascript"></script>
+    <!-- <script src="<?php #echo base_url('assets/js/scripts/customizer.js') ?>" type="text/javascript"></script> -->
     <!-- END STACK JS-->
     <!-- BEGIN PAGE LEVEL JS-->
     <script type="text/javascript" src="<?php echo base_url('assets/js/scripts/ui/breadcrumbs-with-stats.js') ?>"></script>

@@ -29,7 +29,7 @@
 								<div class="card-content">
 									<div class="card-body">
 										<!-- Card sample -->
-										<img class="img-thumbnail img-fluid" src="<?php echo $api->gambar_event?>" alt="Event Image" >
+										<img class="img-thumbnail img-fluid" src="<?php echo base_url('assets/images/upload/'.$api->gambar_event)?>" alt="Event Image" >
 										<!-- /Card sample -->
 									</div>
 								</div>
@@ -55,10 +55,10 @@
 													<td>Venue</td>
 													<td><?php echo $api->lokasi_event?></td>
 												</tr>
-												<tr>
+												<!-- <tr>
 													<td>Category</td>
 													<td><?php echo $api->kategori_event?></td>
-												</tr>
+												</tr> -->
 												<tr>
 													<td>Price</td>
 													<td>IDR. <?php echo number_format($api->harga_tiket, 0, ".", ".")?></td>

@@ -58,6 +58,48 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/add_event',$event);
 		$this->load->view('admin/footer');
 	}
+	public function insertevent()
+	{
+		$img = [
+			'upload_path' => './assets/images/upload/',
+			'allowed_types' => 'gif|jpg|png|jpeg'
+		];
+		
+		$this->load->library('upload', $img);
+		
+		if ( ! $this->upload->do_upload('img')){
+			$error = array('error' => $this->upload->display_errors());
+			$this->session->set_flashdata('salah', 'true');
+			redirect('Admin/event');
+		}
+		else{
+			$id_Event 	= $this->Admin_model->IDEvent();
+			$nama_event 	= $this->input->post('nama');
+			$date 		= $this->input->post('date');
+			$time 		= $this->input->post('time');
+			$datetime 	= $date." ".$time;	
+			$loc			= $this->input->post('lokasi');
+			$price		= $this->input->post('harga');
+			$category		= $this->input->post('kategori');
+			$info 		= $this->upload->data();
+			$data 		= array(
+							'id_Event' => $id_Event, 
+							'nama_event' => $nama_event, 
+							'jadwal_event' => $datetime, 
+							'lokasi_event' => $loc,
+							'image_event' => $info['file_name'],
+							'harga_tiket' => $price,
+							'kategori_event' => $category);
+			$add 		= $this->Admin_model->createvent('event',$data);
+			if ($add > 0) {
+				$this->session->set_flashdata('sucess', 'true');
+				redirect('Admin/event');
+			}else{
+				echo 'Record Failed';
+			}
+		}
+
+	}
 	public function test()
 	{
 		// request list of contacts from Web API
@@ -72,9 +114,8 @@ class Admin extends CI_Controller {
 		print_r($data);
 		echo "</pre>";
 	}
-	public function test2($id_user)
+	public function test2()
 	{
-		$balance[] = $this->Home_model->see_balance($id_user);
-		print_r($balance[0][0]['balance']);
+		
 	}
 }

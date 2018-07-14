@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/pages/timeline.css') ?>">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <!-- <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css') ?>"> -->
     <!-- END Custom CSS-->
 </head>
 
@@ -84,12 +84,7 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <ul class="dropdown-header">
                                         <p>Balance : <strong>IDR. <?php echo number_format($tampil[0]['balance'], 0, ".", ".")?></strong></p>
-                                        <!-- <p><?php echo $tampil[0]['balance']; ?></p> -->
                                     </ul>
-                                    <!-- <a class="dropdown-item" href="#">
-                                        <i class="ft-mail"></i> My Inbox</a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="ft-check-square"></i> Task</a> -->
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="<?= site_url('login?logout=signout')?>">
                                         <i class="ft-power"></i> Logout</a>
@@ -118,19 +113,19 @@
         <div class="navbar-container main-menu-content" data-menu="menu-container">
             <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= site_url()?>">
+                    <a class="active nav-link" href="<?= site_url()?>">
                         <i class="ft-home"></i>
                         <span>Beranda</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= site_url('EventCalendar')?>">
+                    <a class="nav-link disabled" href="<?= site_url('EventCalendar')?>">
                         <i class="ft-calendar"></i>
                         <span>Jadwal Event</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= site_url('Help')?>">
+                <li class="nav-item ">
+                    <a class="nav-link disabled" href="<?= site_url('Help')?>">
                         <i class="ft-phone"></i>
                         <span>Bantuan</span>
                     </a>
