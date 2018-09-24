@@ -7,6 +7,6 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<iframe src="https://maps3d.io/viewer/3d?ne%5Blat%5D=-6.208895670147047&ne%5Blng%5D=106.7389459908768&sw%5Blat%5D=-6.209508959194222&sw%5Blng%5D=106.73803403981174" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	<iframe src="https://web.whatsapp.com" width="100%"></iframe>
 </body>
 </html>
